@@ -44,9 +44,11 @@ halbtonApp.controller('HalbtonController', ['$scope', function ($scope) {
     }
 
   ];
-  $scope.berechneZielton = function(grundton,abstand) {
+  $scope.berechneZielton = function (grundton, abstand) {
 
-    var zielton=grundton.index + abstand;
+    var zieltonIndex = grundton.index + abstand;
+
+    var zielton = $scope.halbtoene[zieltonIndex];
 
     $scope.zielton = zielton;
   }
