@@ -1,0 +1,13 @@
+<div ng-controller="HalbtonController">
+    <div>
+        Grundton
+        <select ng-model="grundton" ng-options="ton.name  for ton in halbtoene"></select>
+    </div>
+    <div>
+        Abstand
+        <input type="number" ng-maxlength="2" ng-minlength="1" ng-model="abstand" ng-change="berechneZielton(grundton,abstand)"/>
+    </div>
+    <div>
+        Zielton {{ zielton }}
+    </div>
+</div>
