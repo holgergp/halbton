@@ -2,9 +2,13 @@
 
 /* Controllers */
 
+var keinZielton={"name": "Keine Ahnung!"};
 
 var halbtonApp = angular.module('halbtonApp.controllers', []);
 halbtonApp.controller('HalbtonController', ['$scope', function ($scope) {
+  $scope.zielton=keinZielton;
+
+
   $scope.halbtoene = [
     {"name": "C",
       index: 0
@@ -45,13 +49,15 @@ halbtonApp.controller('HalbtonController', ['$scope', function ($scope) {
 
   ];
   $scope.berechneZielton = function (grundton, abstand) {
+
     var halbtoene=$scope.halbtoene;
     var zieltonIndex = (grundton.index + abstand) % halbtoene.length;
 
 
     var zielton = halbtoene[zieltonIndex];
+    $scope.zielton =_.isNull(zielton)||_.isUndefined(zielton)?keinZielton:zielton;
 
-    $scope.zielton = zielton;
+
   }
 
 }]);
