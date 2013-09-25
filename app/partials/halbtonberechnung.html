@@ -2,13 +2,13 @@
     <div class="form-inline" role="form" style="font-size: 40px; padding-top: 20px; font-weight: bold">
         Wenn ich von
 
-        <select ng-model="grundton" ng-options="ton.name  for ton in halbtoene" ng-required="true"
+        <select ng-model="grundton" ng-options="ton.name  for ton in halbtoene" ng-required="true" required="true"
                 ng-change="berechneZielton(grundton,abstand)"
                 class="form-control">
             <option value="">Grundton</option>
         </select>
 
-        <input type="number" ng-required="true" ng-maxlength="2" ng-minlength="1" ng-model="abstand"
+        <input type="number" ng-required="true" ng-maxlength="2" ng-minlength="1" maxlength="2" required="true" ng-model="abstand"
                ng-change="berechneZielton(grundton,abstand)" placeholder="Notenabstand"
                class="form-control"/>
         Halbtonschritte weiterzähle lande ich bei
