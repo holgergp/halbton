@@ -1,13 +1,25 @@
-<div ng-controller="HalbtonController">
-    <div>
-        Grundton
-        <select ng-model="grundton" ng-options="ton.name  for ton in halbtoene" ng-required="true" ng-change="berechneZielton(grundton,abstand)"></select>
+<div class="container" >
+    <div class="form-inline" role="form">
+
+
+        <select ng-model="grundton" ng-options="ton.name  for ton in halbtoene" ng-required="true"
+                ng-change="berechneZielton(grundton,abstand)"
+                class="form-control halbtonInput">
+            <option value="">Grundton</option>
+        </select>
+
+        <input type="number" ng-required="true" ng-maxlength="2" ng-minlength="1" ng-model="abstand"
+               ng-change="berechneZielton(grundton,abstand)" placeholder="Notenabstand"
+               class="form-control halbtonInput"/>
     </div>
-    <div>
-        Abstand
-        <input type="number" ng-required="true" ng-maxlength="2" ng-minlength="1" ng-model="abstand" ng-change="berechneZielton(grundton,abstand)"/>
-    </div>
-    <div>
-        Zielton {{ zielton.name }}
-    </div>
+    <p style="font-size: 20px; padding-top: 20px; padding-bottom: 30px;">
+        Zielton
+
+    </p>
+
+    <p style="font-size: 100px; font-weight: bold">
+        {{ zielton.name }}
+    </p>
+
+</div>
 </div>
