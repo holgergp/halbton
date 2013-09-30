@@ -50,14 +50,42 @@ halbtonApp.controller('HalbtonController', ['$scope', function ($scope) {
   ];
   $scope.berechneZielton = function (grundton, abstand) {
 
-    var halbtoene=$scope.halbtoene;
-    var zieltonIndex = (grundton.index + abstand) % halbtoene.length;
+    if(isNullOrEmpty(grundton)||isNullOrEmpty(abstand)){
+      $scope.zielton=keinZielton;
+      return;
+    }
+
+   var halbtoene=$scope.halbtoene;
+   var zieltonIndex = mod( halbtoene.length,grundton.index + abstand );
+
+   var zielton = halbtoene[zieltonIndex];
+   $scope.zielton =isNullOrEmpty(zielton)?keinZielton:zielton;
 
 
-    var zielton = halbtoene[zieltonIndex];
-    $scope.zielton =_.isNull(zielton)||_.isUndefined(zielton)?keinZielton:zielton;
+  }
 
+  /**
+   * Überprüft (mithilfe von Underscore) on
+   * @param object
+   * Null oder undefined ist
+   * @returns {Boolean}
+   * true falls null oder undefined
+   * false falls nicht
+   */
+  var isNullOrEmpty=function(object){
+    return _.isNull(object)||_.isUndefined(object);
+  }
 
+  /**
+   * Helferfunktion die die Modulofunktion in Javascript geraderückt
+   * siehe auch http://stackoverflow.com/questions/4467539/javascript-modulo-not-behaving
+   * @param n
+   * @param m
+   * @returns {number}
+   * Beispiel n:12 m:-1 returns 11
+   */
+  var mod=function mod(n, m) {
+    return ((m % n) + n) % n;
   }
 
 }]);
