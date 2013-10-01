@@ -5,6 +5,6 @@ Halbton should provide a simple computing of a tonevalue given a basetone and an
 
 This app is based on the [angular-seed project](https://github.com/angular/angular-seed/)
 
-![Build Status](https://travis-ci.org/[holgergp]/[halbton].png)](https://travis-ci.org/[holgergp]/[halbton])
+![Build Status](https://travis-ci.org/holgergp/halbton.png)](https://travis-ci.org/holgergp/halbton)
 
 
