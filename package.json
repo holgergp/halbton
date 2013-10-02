@@ -1,6 +1,15 @@
 {
   "name": "halbton",
   "description": "halbton",
+  "repository": {
+    "type": "git",
+    "url": "https://gthub.com/holgergp/halbton"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm":  "1.2.x"
+  },
+
   "devDependencies": {
     "phantomjs": "*",
     "karma": "~0.10.2",
