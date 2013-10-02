@@ -8,6 +8,8 @@ This app is based on the [angular-seed project](https://github.com/angular/angul
 I switched the backend from the shipped webserver with express, to define routes more easily.
 Start the app by `node app.js`
 
+You can see it in action [here](http://halbton.herokuapp.com)
+
 [![Build Status](https://travis-ci.org/holgergp/halbton.png)](https://travis-ci.org/holgergp/halbton)
 
 
