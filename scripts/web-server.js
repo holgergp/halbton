@@ -6,7 +6,8 @@ var util = require('util'),
     url = require('url'),
     events = require('events');
 
-var DEFAULT_PORT = 8000;
+//Anpassung für Heroku
+var DEFAULT_PORT = process.env.PORT || 8000;
 
 function main(argv) {
   new HttpServer({
@@ -41,6 +42,7 @@ function HttpServer(handlers) {
 HttpServer.prototype.start = function(port) {
   this.port = port;
   this.server.listen(port);
+
   util.puts('Http Server running at http://localhost:' + port + '/');
 };
 
