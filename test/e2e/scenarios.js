@@ -1,15 +1,16 @@
 'use strict';
 
 /* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
-
 describe('HalbtonApp', function() {
 
   beforeEach(function() {
-    browser().navigateTo('../../app/index.html');
+    //Navigiere zum Root der Anwendung
+    browser().navigateTo('../..//');
   });
 
 
   it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+
     expect(browser().location().url()).toBe("/default");
   });
 
