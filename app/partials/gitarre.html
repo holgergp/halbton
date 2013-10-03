@@ -2,7 +2,11 @@
     <div class="gitarrenHals">
 
         <div ng-repeat="saite in normalSaiten" class="saite-{{$index+1}}">
-            <div ng-repeat="bund in bundRange" style="display: inline-block"><div class="bundClass"> </div></div>
+            <div ng-repeat="bund in bundRange" style="display: inline-block">
+                <div class="bundClass">
+                    <hr class="bundInSaite-{{saite.index+1}}"/>
+                </div>
+            </div>
         </div>
     </div>
 

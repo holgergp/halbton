@@ -10,6 +10,36 @@ body.app {
     height: 20em;
 }
 
+hr {
+    background-color: rgb(97, 97, 97);
+    border-top: 0;
+    border-bottom: 0;
+    margin: 0.8em 0 0;
+}
+
+.bundInSaite-1 {
+    height: 1px;
+}
+
+.bundInSaite-2 {
+    height: 2px;
+}
+
+.bundInSaite-3 {
+    height: 3px;
+}
+
+.bundInSaite-4 {
+    height: 4px;
+}
+
+.bundInSaite-5 {
+    height: 5px;
+}
+
+.bundInSaite-6 {
+    height: 6px;
+}
 
 .menu {
     list-style: none;
@@ -55,36 +85,37 @@ body.app {
 }
 
 .saite-1 {
-    border-top: 1px solid black;
+    /* border-top: 1px solid black;*/
     width: 100%;
     height: 2em;
 }
 
 .saite-2 {
-    border-top: 2px solid black;
+    /*border-top: 2px solid black;*/
     width: 100%;
     height: 2em;
 }
 
 .saite-3 {
-    border-top: 3px solid black;
+    /*border-top: 3px solid black;*/
     width: 100%;
     height: 2em;
 }
 
 .saite-4 {
-    border-top: 4px solid black;
+    /*border-top: 4px solid black;*/
     width: 100%;
     height: 2em;
 }
 
 .saite-5 {
-    border-top: 5px solid black;
+    /* border-top: 5px solid black;*/
     width: 100%;
     height: 2em;
 }
+
 .saite-6 {
-    border-top: 6px solid black;
+    /*   border-top: 6px solid black;*/
     width: 100%;
     height: 2em;
 }
@@ -92,17 +123,22 @@ body.app {
 .gitarrenHals {
     padding-top: 3em;
     width: 50em;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 .bundClass {
     width: 4em;
     height: 2em;
-    border-left: 0.1em solid black;
-    border-right: 0.1em solid black;
-    background-color: #515151;
+    border-left: 0.1em solid rgba(0, 0, 0, 0.18);
+    border-right: 0.1em solid rgba(0, 0, 0, 0.7);
+    background-color: #463320;
     overflow-x: hidden;
 
 }
+
+
+
+
+
 
 
