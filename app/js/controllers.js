@@ -121,6 +121,7 @@ halbtonApp.controller('GitarrenController', ['$scope', function ($scope) {
 
   }
 
+
   /**
    * Überprüft (mithilfe von Underscore) on
    * @param object

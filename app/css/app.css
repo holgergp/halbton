@@ -44,6 +44,7 @@ body.app {
     font-size: 3em;
     padding-top: 0.66em;
     font-weight: bold;
+    line-height: 1em;
 }
 
 .halbtonAnswer {
@@ -51,5 +52,6 @@ body.app {
     font-weight: bold;
     padding-top: 0.5em;
     padding-bottom: 0.4em;
+    line-height: 1em;
 }
 
