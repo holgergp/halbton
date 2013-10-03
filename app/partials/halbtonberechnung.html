@@ -1,23 +1,31 @@
-<div class="" >
-    <div class="form-inline halbtonQuestion" role="form">
-        Wenn ich von
+<div class="container-fluid">
+    <div class="halbtonQuestion" role="form" class="row-fluid">
+        <div class="col-md-1">Wenn ich von
 
-        <select ng-model="grundton" ng-options="ton.name  for ton in halbtoene" ng-required="true" required="true"
-                ng-change="berechneZielton(grundton,abstand)"
-                class="form-control">
-            <option value="">Grundton</option>
-        </select>
 
-        <input type="number" ng-required="true" ng-maxlength="2" ng-minlength="1" maxlength="2" required="true" ng-model="abstand"
-               ng-change="berechneZielton(grundton,abstand)" placeholder="Notenabstand"
-               class="form-control"/>
-        Halbtonschritte weiterzähle lande ich bei
+            <select ng-model="grundton" ng-options="ton.name  for ton in halbtoene" ng-required="true" required="true"
+                    ng-change="berechneZielton(grundton,abstand)"
+                    class="">
+                <option value="">Grundton</option>
+            </select>
+
+
+            <input type="number" ng-required="true" ng-maxlength="2" ng-minlength="1" maxlength="2" required="true"
+                   ng-model="abstand"
+                   ng-change="berechneZielton(grundton,abstand)" placeholder="Notenabstand"
+                   class=""/>
+            Halbtonschritte weiterzähle lande ich bei
+        </div>
+
+
     </div>
 
 
-    <p class="halbtonAnswer">
-        {{ zielton.name }}
-    </p>
+    <div class="row-fluid">
 
-</div>
+        <div class="halbtonAnswer">
+            {{ zielton.name }}
+        </div>
+    </div>
+
 </div>
