@@ -41,17 +41,16 @@ body.app {
 }
 
 .halbtonQuestion {
-    font-size: 3em;
+    font-size: 2.8em;
     padding-top: 0.66em;
     font-weight: bold;
     line-height: 1em;
 }
 
 .halbtonAnswer {
-    font-size: 7em;
+    font-size: 6.8em;
     font-weight: bold;
-    padding-top: 0.5em;
-    padding-bottom: 0.4em;
+    padding-top: 0.1em;
     line-height: 1em;
 }
 
