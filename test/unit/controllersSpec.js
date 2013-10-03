@@ -28,7 +28,7 @@ describe('controllers', function(){
     //create a scope object for us to use.
     scope = $rootScope.$new();
 
-    ctrl = $controller('HalbtonController', {
+    ctrl = $controller('HalbtonAbstandController', {
       $scope: scope
     });
   }));

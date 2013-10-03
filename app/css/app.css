@@ -1,5 +1,16 @@
 /* app css stylesheet */
 
+body {
+    font-size: 100%;
+
+}
+
+body.app {
+    background-color: rgba(73, 69, 65, 0.41);
+    height: 20em;
+}
+
+
 .menu {
     list-style: none;
     border-bottom: 0.1em solid black;
@@ -29,17 +40,16 @@
     padding: 0;
 }
 
-.halbtonInput {
-    height: 40px;
-    font-size: 40px;
-    padding-top: 0px;
-    margin-top: 0px;
-}
-
-.halbtonText {
-
-    font-size: 40px;
-    padding-top: 50px;
-    margin-top: 50px;
+.halbtonQuestion {
+    font-size: 3em;
+    padding-top: 0.66em;
     font-weight: bold;
 }
+
+.halbtonAnswer {
+    font-size: 7em;
+    font-weight: bold;
+    padding-top: 0.5em;
+    padding-bottom: 0.4em;
+}
+
