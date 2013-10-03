@@ -54,3 +54,55 @@ body.app {
     line-height: 1em;
 }
 
+.saite-1 {
+    border-top: 1px solid black;
+    width: 100%;
+    height: 2em;
+}
+
+.saite-2 {
+    border-top: 2px solid black;
+    width: 100%;
+    height: 2em;
+}
+
+.saite-3 {
+    border-top: 3px solid black;
+    width: 100%;
+    height: 2em;
+}
+
+.saite-4 {
+    border-top: 4px solid black;
+    width: 100%;
+    height: 2em;
+}
+
+.saite-5 {
+    border-top: 5px solid black;
+    width: 100%;
+    height: 2em;
+}
+.saite-6 {
+    border-top: 6px solid black;
+    width: 100%;
+    height: 2em;
+}
+
+.gitarrenHals {
+    padding-top: 3em;
+    width: 50em;
+    overflow-x:hidden;
+}
+
+.bundClass {
+    width: 4em;
+    height: 2em;
+    border-left: 0.1em solid black;
+    border-right: 0.1em solid black;
+    background-color: #515151;
+    overflow-x: hidden;
+
+}
+
+
