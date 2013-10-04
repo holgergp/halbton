@@ -47,6 +47,21 @@ describe('HalbtonApp', function() {
 
   });
 
+  describe('Gitarre', function() {
+
+    beforeEach(function() {
+      browser().navigateTo('#/view1');
+    });
+
+    it('should show a guitar when user navigates to /view1', function() {
+      expect(repeater('div.gitarrenHals').count()).toEqual(1);
+      expect(repeater('div.gitarrenHals > div').count()).toEqual(6);
+    });
+
+
+
+  });
+
 
 
 });
