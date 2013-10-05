@@ -136,7 +136,6 @@ describe('controllers', function () {
     it('should set up the model', function () {
 
       //just assert. $scope was set up in beforeEach() (above)
-      expect(scope.normalSaiten.length).toEqual(6);
       expect(scope.bundRange.length).toBe(12);
       expect(scope.saiten).not.toBeNull();
       expect(scope.saiten.length).toBe(6);
@@ -225,7 +224,7 @@ describe('controllers', function () {
       });
 
       expect(count.false).toBe(13);
-      
+
     });
 
     it ('should not fail on null',function() {

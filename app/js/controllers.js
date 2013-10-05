@@ -55,16 +55,6 @@ halbtonApp.controller('GitarrenController', ['$scope', 'zieltonService', 'halbto
   var noteh = halbtoene[11];
 
 
-  $scope.normalSaiten = [
-    {note: notee, index: 0},
-    {note: notea, index: 1},
-    {note: noted, index: 2},
-    {note: noteg, index: 3},
-    {note: noteh, index: 4},
-    {note: notee, index: 5}
-
-  ];
-
   $scope.bundRange = _.range(0, 12);
 
 
