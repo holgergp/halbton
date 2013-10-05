@@ -34,7 +34,7 @@ halbtonApp.controller('GitarrenController', ['$scope', 'zieltonService', 'halbto
    */
   var createBund =function(ton,leer){
     return {
-      note: grundton,
+      note: ton,
       leer: leer,
       leerClass: function () {
         return this.leer?"Leer":"";
