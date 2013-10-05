@@ -58,6 +58,19 @@ describe('HalbtonApp', function() {
       expect(repeater('div.gitarrenHals > div').count()).toEqual(6);
     });
 
+    it('should mark note e on the guitar when user selects an e as grundton', function() {
+
+    });
+
+
+    it('should mark note e as grundton and f as zielton on the guitar when user selects an e as grundton and abstand 1', function() {
+
+    });
+
+    it('should mark note e as grundton and zielton on the guitar when user selects an e as grundton and abstand 0', function() {
+
+    });
+
 
 
   });

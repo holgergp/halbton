@@ -3,24 +3,55 @@
 /* jasmine specs for controllers go here */
 
 describe('controllers', function () {
-  var mockHalbtoene=new Array(12);
+
   beforeEach(module('halbtonApp.controllers'));
   var scope = null;
   var gitarrenCtrl = null;
   var halbtonAbstandCtrl = null;
 
-  var notec = {"name": "C",
+
+  var notec={"name": "C",
     index: 0
-  }
-
-  var notecsharp = {"name": "C#",
+  };
+  var notecsharp={"name": "C#",
     index: 1
-  }
-
-
-  var noteh = {"name": "H",
+  };
+  var noted={"name": "D",
+    index: 2
+  };
+  var notedsharp={"name": "D#",
+    index: 3
+  };
+  var notee={"name": "E",
+    index: 4
+  };
+  var notef={"name": "F",
+    index: 5
+  };
+  var notefsharp={"name": "F#",
+    index: 6
+  };
+  var noteg={"name": "G",
+    index: 7
+  };
+  var notegsharp={"name": "G#",
+    index: 8
+  };
+  var notea={"name": "A",
+    index: 9
+  };
+  var noteasharp={"name": "A#",
+    index: 10
+  };
+  var noteh={"name": "H",
     index: 11
-  }
+  };
+
+
+  var halbtoene = [
+    notec,notecsharp,noted,notedsharp,notee,notef,notefsharp,noteg,notegsharp,notea,noteasharp,noteh
+  ];
+
 
   var keineNote = {"name": "Testcall"
 
@@ -43,7 +74,7 @@ describe('controllers', function () {
       halbtonAbstandCtrl = $controller('HalbtonAbstandController', {
         $scope: scope,
         zieltonService: mockService,
-        halbtoene:mockHalbtoene
+        halbtoene:halbtoene
 
       });
     }));
@@ -90,14 +121,14 @@ describe('controllers', function () {
       gitarrenCtrl = $controller('GitarrenController', {
         $scope: scope,
         zieltonService:mockService,
-        halbtoene:mockHalbtoene
+        halbtoene:halbtoene
       });
 
 
       halbtonAbstandCtrl = $controller('HalbtonAbstandController', {
         $scope: scope,
         zieltonService:mockService,
-        halbtoene:mockHalbtoene
+        halbtoene:halbtoene
       });
 
     }));
@@ -107,11 +138,105 @@ describe('controllers', function () {
       //just assert. $scope was set up in beforeEach() (above)
       expect(scope.normalSaiten.length).toEqual(6);
       expect(scope.bundRange.length).toBe(12);
-      expect(scope.griffPositionen.length).toBe(6);
-      expect(scope.griffPositionen[0]).not.toBeNull();
-      expect(scope.griffPositionen[0].length).toBe(13);
+      expect(scope.saiten).not.toBeNull();
+      expect(scope.saiten.length).toBe(6);
+      expect(scope.saiten[0].buende.length).toBe(13);
+      expect(scope.saiten[0].buende[0]).not.toBeNull();
+
+    });
+
+    it ('should call markiereZielton onChange',function() {
+      //set up the spy.
+      spyOn(scope, 'markiereZielton').andCallThrough();
+
+      //make the call!
+      scope.zielton=keineNote;
+      scope.$apply();
+
+      //assert!
+      expect(scope.markiereZielton).toHaveBeenCalled();
+    });
+
+    it ('should mark Zielton E',function() {
+      scope.markiereZielton(notee);
+      var count=_.countBy(scope.saiten[5].buende, function(bund) {
+        return bund.zieltonMarkiert ===true;
+      });
+
+      expect(count.true).toBe(1);
+      expect(count.false).toBe(12);
+    });
+
+    it ('should not mark Zielton Keine Note',function() {
+
+      scope.markiereZielton({name: 'Keine Note'});
 
 
+      var count=_.countBy(scope.saiten[5].buende, function(bund) {
+        return bund.zieltonMarkiert ===true;
+      });
+
+      expect(count.false).toBe(13);
+
+    });
+
+    it ('should not fail on null',function() {
+
+
+      scope.markiereZielton(null);
+
+
+      var count=_.countBy(scope.saiten[5].buende, function(bund) {
+        return bund.zieltonMarkiert ===true;
+      });
+
+      expect(count.false).toBe(13);
+    });
+
+
+    it ('should call markiereGrundton onChange',function() {
+      //set up the spy.
+      spyOn(scope, 'markiereGrundton').andCallThrough();
+
+      //make the call!
+      scope.grundton=keineNote;
+      scope.$apply();
+
+      //assert!
+      expect(scope.markiereGrundton).toHaveBeenCalled();
+    });
+
+    it ('should mark Grundton E',function() {
+      scope.markiereGrundton(notee);
+      var count=_.countBy(scope.saiten[5].buende, function(bund) {
+        return bund.grundtonMarkiert ===true;
+      });
+
+      expect(count.true).toBe(1);
+      expect(count.false).toBe(12);
+    });
+
+    it ('should not mark Grundton Keine Note',function() {
+      scope.markiereZielton({name: 'Keine Note'});
+
+
+      var count=_.countBy(scope.saiten[5].buende, function(bund) {
+        return bund.grundtonMarkiert ===true;
+      });
+
+      expect(count.false).toBe(13);
+      
+    });
+
+    it ('should not fail on null',function() {
+      scope.markiereGrundton(null);
+
+
+      var count=_.countBy(scope.saiten[5].buende, function(bund) {
+        return bund.grundtonMarkiert ===true;
+      });
+
+      expect(count.false).toBe(13);
     });
 
   });

@@ -1,10 +1,12 @@
-<div class="gitarre" ng-controller="GitarrenController">
+<div class="gitarre" ng-controller="GitarrenController" ng-init="markiereZielton()">
     <div class="gitarrenHals">
 
-        <div ng-repeat="saite in normalSaiten" class="saite-{{$index+1}}">
-            <div ng-repeat="bund in bundRange" style="display: inline-block">
-                <div class="bundClass">
-                    <hr class="bundInSaite-{{saite.index+1}}"/>
+        <div ng-repeat="saite in saiten" class="saite-{{$index+1}}">
+            <div ng-repeat="bund in saite.buende" style="display: inline-block">
+                <div class="bundClass{{bund.leerClass()}}">
+                    <hr class="bundInSaite-{{ saite.index+1 }}{{ bund.leerClass() }}"/>
+                    <div class="{{bund.grundtonMarkiertClass()}}">&nbsp;</div>
+                    <div class="{{bund.zieltonMarkiertClass()}}">&nbsp;</div>
                 </div>
             </div>
         </div>

@@ -41,6 +41,10 @@ hr {
     height: 6px;
 }
 
+.bundInSaite-1Leer, .bundInSaite-2Leer, .bundInSaite-3Leer,.bundInSaite-4Leer, .bundInSaite-5Leer, .bundInSaite-6Leer{
+    height: 0px;
+}
+
 .menu {
     list-style: none;
     border-bottom: 0.1em solid black;
@@ -127,14 +131,53 @@ hr {
 }
 
 .bundClass {
-    width: 4em;
+    width: 3em;
     height: 2em;
     border-left: 0.1em solid rgba(0, 0, 0, 0.18);
     border-right: 0.1em solid rgba(0, 0, 0, 0.7);
     background-color: #463320;
     overflow-x: hidden;
+}
+
+.bundClassLeer {
+    width: 3em;
+    height: 2em;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.zieltonMarkiert {
+    width: 0.8em;
+    height: 0.8em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    border-radius: 0.5em;
+    color: #1c651c;
+    background-color: #1c651c;
+    display: inline-block;
+}
+
+.zieltonNichtMarkiert {
+    display: inline-block;
+}
+
+.grundtonMarkiert {
+    width: 0.8em;
+    height: 0.8em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    border-radius: 0.5em;
+    color: #000000;
+    background-color: #000000;
+    display: inline-block;
+;
+}
+
+.grundtonNichtMarkiert {
+    display: inline-block;
 
 }
+
 
 
 
