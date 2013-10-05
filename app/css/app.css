@@ -11,7 +11,7 @@ body.app {
 }
 
 hr {
-    background-color: rgb(97, 97, 97);
+    background-color: rgb(86, 86, 86);
     border-top: 0;
     border-bottom: 0;
     margin: 0.8em 0 0;
@@ -45,34 +45,7 @@ hr {
     height: 0px;
 }
 
-.menu {
-    list-style: none;
-    border-bottom: 0.1em solid black;
-    margin-bottom: 2em;
-    padding: 0 0 0.5em;
-}
 
-.menu:before {
-    content: "[";
-}
-
-.menu:after {
-    content: "]";
-}
-
-.menu > li {
-    display: inline;
-}
-
-.menu > li:before {
-    content: "|";
-    padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-    content: "";
-    padding: 0;
-}
 
 .halbtonQuestion {
     font-size: 2.8em;
@@ -136,9 +109,9 @@ hr {
 .bundClass {
     width: 3em;
     height: 2.6em;
-    border-left: 0.1em solid rgba(0, 0, 0, 0.18);
-    border-right: 0.1em solid rgba(0, 0, 0, 0.7);
-    background-color: #463320;
+    /*border-left: 0.2em solid rgba(0, 0, 0, 0.18);*/
+    border-right: 0.2em solid rgba(0, 0, 0, 0.7);
+    background-color: #865e36;
     overflow-x: hidden;
 }
 
@@ -155,8 +128,8 @@ hr {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     border-radius: 0.5em;
-    color: #1c651c;
-    background-color: #1c651c;
+    color: #113711;
+    background-color: #113711;
     display: inline-block;
 }
 
@@ -183,7 +156,34 @@ hr {
 
 
 
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
 
+.menu:before {
+    content: "[";
+}
+
+.menu:after {
+    content: "]";
+}
+
+.menu > li {
+    display: inline;
+}
+
+.menu > li:before {
+    content: "|";
+    padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+    content: "";
+    padding: 0;
+}
 
 
 
