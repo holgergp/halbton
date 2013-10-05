@@ -135,7 +135,7 @@ hr {
 }
 .bundClass {
     width: 3em;
-    height: 2.4em;
+    height: 2.6em;
     border-left: 0.1em solid rgba(0, 0, 0, 0.18);
     border-right: 0.1em solid rgba(0, 0, 0, 0.7);
     background-color: #463320;
@@ -144,7 +144,7 @@ hr {
 
 .bundClassLeer {
     width: 3em;
-    height: 2.4em;
+    height: 2.6em;
     background-color: #ffffff;
     overflow-x: hidden;
 }
