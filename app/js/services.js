@@ -9,6 +9,10 @@ var serviceModule = angular.module('halbtonApp.services', []);
 
 serviceModule.value('version', '0.1');
 
+/**
+ * Define the notes of the octave
+ * @type {{name: string, index: number}}
+ */
 var notec={"name": "C",
   index: 0
 };
@@ -46,19 +50,38 @@ var noteh={"name": "H",
   index: 11
 };
 
+/**
+ * 'Result' if no target tone could be computed
+ * @type {{name: string}}
+ */
 var keinZielton={"name": "Keine Ahnung!"};
 
+/**
+ * All halbtoene
+ * @type {Array}
+ */
 var halbtoene = [
   notec,notecsharp,noted,notedsharp,notee,notef,notefsharp,noteg,notegsharp,notea,noteasharp,noteh
 ];
 
-
+/**
+ * Defining the halbtoene as constant
+ */
 serviceModule.constant('halbtoene',halbtoene);
 
-
+/**
+ * Registering the zieltonService as service to angular.js
+ * In that way we can share logic between the two controllers
+ */
 serviceModule.factory('zieltonService', function() {
 
   var zieltonService ={
+    /**
+     * Given a basetone and a threshold compute a target tone
+     * @param grundton basetone from which we want to compute
+     * @param abstand threshold to 'add' to the basetone
+     * @returns {{name: string}}
+     */
     berechneZielton :function(grundton,abstand) {
       if(isNullOrEmpty(grundton)||isNullOrEmpty(abstand)){
         return keinZielton;
@@ -69,9 +92,10 @@ serviceModule.factory('zieltonService', function() {
       return isNullOrEmpty(zielton)?keinZielton:zielton;
     },
 
+    /**
+     * Defining property of the service
+     */
     keinZielton : keinZielton
-
-
 
 
   };

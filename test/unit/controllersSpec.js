@@ -10,6 +10,11 @@ describe('controllers', function () {
   var halbtonAbstandCtrl = null;
 
 
+  /**
+   * All notes of the octave
+   * TODO refactor
+   * @type {{name: string, index: number}}
+   */
   var notec={"name": "C",
     index: 0
   };
@@ -47,16 +52,31 @@ describe('controllers', function () {
     index: 11
   };
 
-
+  /**
+   * Defining the halbtoene
+   * TODO refactor
+   * @type {Array}
+   */
   var halbtoene = [
     notec,notecsharp,noted,notedsharp,notee,notef,notefsharp,noteg,notegsharp,notea,noteasharp,noteh
   ];
 
 
+  /**
+   * Special KeineNote for the test
+   * @type {{name: string}}
+   */
   var keineNote = {"name": "Testcall"
 
   }
 
+  /**
+   * Mocking the ZieltonService
+   * Beware: as berechneZielton always returns 'keineNote' all frets other than the empty one will contain 'KeineNote'
+   * This is mostly okay, but can lead to unwanted behaviour
+   * If want to service to behave differently mock it in your test
+   * @type {{berechneZielton: Function, keinZielton: {name: string}}}
+   */
   var mockService = {
     berechneZielton: function (){
       return keineNote;
