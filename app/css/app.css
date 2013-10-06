@@ -131,10 +131,14 @@ hr {
     color: #2a9b2a;
     background-color: #2a9b2a;
     display: inline-block;
+    position: relative;
+    top: -0.5em;
 }
 
 .zieltonNichtMarkiert {
     display: inline-block;
+    position: relative;
+    top: -0.5em;
 }
 
 .grundtonMarkiert {
@@ -146,12 +150,14 @@ hr {
     color: #000000;
     background-color: #000000;
     display: inline-block;
-;
+    position: relative;
+    top: -0.5em;
 }
 
 .grundtonNichtMarkiert {
     display: inline-block;
-
+    position: relative;
+    top: -0.5em;
 }
 
 
