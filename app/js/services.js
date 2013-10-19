@@ -16,13 +16,13 @@ serviceModule.value('version', '0.1');
 var notec={"name": "C",
   index: 0
 };
-var notecsharp={"name": "C#",
+var notecsharp={"name": "C#/C\u266D",
   index: 1
 };
 var noted={"name": "D",
   index: 2
 };
-var notedsharp={"name": "D#",
+var notedsharp={"name": "D#/D\u266D",
   index: 3
 };
 var notee={"name": "E",
@@ -31,19 +31,19 @@ var notee={"name": "E",
 var notef={"name": "F",
   index: 5
 };
-var notefsharp={"name": "F#",
+var notefsharp={"name": "F#/F\u266D",
   index: 6
 };
 var noteg={"name": "G",
   index: 7
 };
-var notegsharp={"name": "G#",
+var notegsharp={"name": "G#/G\u266D",
   index: 8
 };
 var notea={"name": "A",
   index: 9
 };
-var noteasharp={"name": "A#",
+var noteasharp={"name": "A#/A\u266D",
   index: 10
 };
 var noteh={"name": "H",
@@ -75,7 +75,7 @@ serviceModule.constant('halbtoene',halbtoene);
  */
 serviceModule.factory('zieltonService', function() {
 
-  var zieltonService ={
+  return {
     /**
      * Given a basetone and a threshold compute a target tone
      * @param grundton basetone from which we want to compute
@@ -101,7 +101,6 @@ serviceModule.factory('zieltonService', function() {
   };
 
 
-  return zieltonService;
 
 });
 
@@ -115,7 +114,7 @@ serviceModule.factory('zieltonService', function() {
  */
 var isNullOrEmpty=function(object){
   return _.isNull(object)||_.isUndefined(object);
-}
+};
 
 /**
  * Helferfunktion die die Modulofunktion in Javascript geraderückt
@@ -127,4 +126,4 @@ var isNullOrEmpty=function(object){
  */
 var mod=function mod(n, m) {
   return ((m % n) + n) % n;
-}
+};
