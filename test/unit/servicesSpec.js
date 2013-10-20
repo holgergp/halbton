@@ -18,7 +18,19 @@ describe('service', function () {
 
     var keineNote = {"name": "Keine Ahnung!"
 
-    }
+    };
+
+    var notec = {"name": "C",
+      index: 0
+    };
+
+    var noteh = {"name": "H",
+      index: 11
+    };
+
+    var notecsharp = {"name": "C#/C\u266D",
+      index: 1
+    };
     //excuted before each "it" is run.
     beforeEach(function () {
 

@@ -68,7 +68,7 @@ describe('controllers', function () {
    */
   var keineNote = {"name": "Testcall"
 
-  }
+  };
 
   /**
    * Mocking the ZieltonService
@@ -83,7 +83,7 @@ describe('controllers', function () {
     },
     keinZielton: keineNote
 
-  }
+  };
 
 
   describe('HalbtonAbstandController', function () {
@@ -113,7 +113,7 @@ describe('controllers', function () {
       spyOn(mockService, 'berechneZielton').andCallThrough();
 
       //make the call!
-      scope.berechneZielton(null, null)
+      scope.berechneZielton(null, null);
 
       //assert!
       expect(mockService.berechneZielton).toHaveBeenCalled();
@@ -122,7 +122,7 @@ describe('controllers', function () {
 
     it('should set the zielton', function () {
 
-      scope.berechneZielton(null, null)
+      scope.berechneZielton(null, null);
 
       //assert!
       expect(scope.zielton).toEqual(keineNote);

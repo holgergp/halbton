@@ -74,7 +74,7 @@ var halbtoene = [
  * false falls nicht
  */
 var isNullOrEmpty = function (object) {
-  return _.isNull(object) ||_.isUndefined(object);
+  return _.isNull(object) || _.isUndefined(object);
 };
 
 /**

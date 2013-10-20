@@ -117,23 +117,23 @@ halbtonApp.controller('GitarrenController', ['$scope', 'zieltonService', 'halbto
   /**
    * Watching for changes of the target tone
    */
-  $scope.$watch('zielton', function (newVal, oldVal) {
+  $scope.$watch('zielton', function (newVal) {
     $scope.markiereZielton(newVal);
   });
 
   /**
    * Watching for changes of the base tone
    */
-  $scope.$watch('grundton', function (newVal, oldVal) {
+  $scope.$watch('grundton', function (newVal) {
     $scope.markiereGrundton(newVal);
   });
 
-/**
- * 'Busiuness Logic' of this controller
- * Mark every occurence of the target tone on the guitar
- * @param zielton the target tone to be marked
- */
-$scope.markiereZielton = function (zielton) {
+  /**
+   * 'Busiuness Logic' of this controller
+   * Mark every occurence of the target tone on the guitar
+   * @param zielton the target tone to be marked
+   */
+  $scope.markiereZielton = function (zielton) {
     var markiereZieltoeneAufEinerSaite = function (bund) {
       bund.zieltonMarkiert = bund.note === zielton;
       return bund;
@@ -147,13 +147,13 @@ $scope.markiereZielton = function (zielton) {
 
   };
 
-/**
- * 'Business Logic' of this controller
- * Mark every occurence of the base tone on the guitar
- * @param grundton the base tone to be marked
- */
+  /**
+   * 'Business Logic' of this controller
+   * Mark every occurence of the base tone on the guitar
+   * @param grundton the base tone to be marked
+   */
   $scope.markiereGrundton = function (grundton) {
-    var markiereGrundtoeneAufEinerSaite = function(bund) {
+    var markiereGrundtoeneAufEinerSaite = function (bund) {
       bund.grundtonMarkiert = bund.note === grundton;
       return bund;
     };
