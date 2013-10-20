@@ -17,8 +17,8 @@ halbtonApp.controller('HalbtonAbstandController', ['$scope', 'zieltonService', '
    * @param abstand the threshold to obtain the targettone
    */
   $scope.berechneZielton = function (grundton, abstand) {
-    $scope.zielton = zieltonService.berechneZielton(grundton, abstand)
-  }
+    $scope.zielton = zieltonService.berechneZielton(grundton, abstand);
+  };
 }]);
 
 /**
@@ -32,24 +32,24 @@ halbtonApp.controller('GitarrenController', ['$scope', 'zieltonService', 'halbto
    * @param leer a fret maybe empty if no chord has to be fingered
    * @returns {{note: *, leer: *, leerClass: Function, zieltonMarkiert: boolean, zieltonMarkiertClass: Function, grundtonMarkiert: boolean, grundtonMarkiertClass: Function}}
    */
-  var createBund =function(ton,leer){
+  var createBund = function (ton, leer) {
     return {
       note: ton,
       leer: leer,
       leerClass: function () {
-        return this.leer?"Leer":"";
+        return this.leer ? "Leer" : "";
       },
       zieltonMarkiert: false,
-      zieltonMarkiertClass: function(){
-        return this.zieltonMarkiert?"zieltonMarkiert":"zieltonNichtMarkiert";
+      zieltonMarkiertClass: function () {
+        return this.zieltonMarkiert ? "zieltonMarkiert" : "zieltonNichtMarkiert";
       },
       grundtonMarkiert: false,
-      grundtonMarkiertClass: function(){
-      return this.grundtonMarkiert?"grundtonMarkiert":"grundtonNichtMarkiert";
-    }
+      grundtonMarkiertClass: function () {
+        return this.grundtonMarkiert ? "grundtonMarkiert" : "grundtonNichtMarkiert";
+      }
 
-    }
-  }
+    };
+  };
 
   /**
    * Helper function to initialise the data structure for one string
@@ -60,24 +60,24 @@ halbtonApp.controller('GitarrenController', ['$scope', 'zieltonService', 'halbto
    * @param saitenIndex which string are we looking at?
    * @returns {{buende: Array, index: *}}
    */
-  var initSaite = function (grundton, bundRange,saitenIndex) {
-    var saite= {
-      buende : new Array(bundRange.length + 1),
+  var initSaite = function (grundton, bundRange, saitenIndex) {
+    var saite = {
+      buende: new Array(bundRange.length + 1),
       index: saitenIndex
 
-    }
+    };
 
     /**
      * We add an extra fret for the empty strum
      * @type {{note: *, leer: *, leerClass: Function, zieltonMarkiert: boolean, zieltonMarkiertClass: Function, grundtonMarkiert: boolean, grundtonMarkiertClass: Function}}
      */
-    saite.buende[0] = createBund(grundton,true);
+    saite.buende[0] = createBund(grundton, true);
 
     for (var pos = 0; pos < bundRange.length; pos++) {
-      saite.buende[pos+1] = createBund(zieltonService.berechneZielton(grundton, pos+1),false);
+      saite.buende[pos + 1] = createBund(zieltonService.berechneZielton(grundton, pos + 1), false);
     }
     return saite;
-  }
+  };
 
   /**
    * Helper for the specific notes
@@ -98,12 +98,12 @@ halbtonApp.controller('GitarrenController', ['$scope', 'zieltonService', 'halbto
   $scope.bundRange = _.range(0, 12);
 
 
-  var esaite = initSaite(notee, $scope.bundRange,5);
-  var asaite = initSaite(notea, $scope.bundRange,4);
-  var dsaite = initSaite(noted, $scope.bundRange,3);
-  var gsaite = initSaite(noteg, $scope.bundRange,2);
-  var hsaite = initSaite(noteh, $scope.bundRange,1);
-  var esaite2 = initSaite(notee, $scope.bundRange,0);
+  var esaite = initSaite(notee, $scope.bundRange, 5);
+  var asaite = initSaite(notea, $scope.bundRange, 4);
+  var dsaite = initSaite(noted, $scope.bundRange, 3);
+  var gsaite = initSaite(noteg, $scope.bundRange, 2);
+  var hsaite = initSaite(noteh, $scope.bundRange, 1);
+  var esaite2 = initSaite(notee, $scope.bundRange, 0);
 
 
   /**
@@ -111,59 +111,62 @@ halbtonApp.controller('GitarrenController', ['$scope', 'zieltonService', 'halbto
    * @type {Array}
    */
   $scope.saiten = [
-    esaite2,hsaite,gsaite,dsaite,asaite,esaite
+    esaite2, hsaite, gsaite, dsaite, asaite, esaite
   ];
 
   /**
    * Watching for changes of the target tone
    */
-  $scope.$watch('zielton', function(newVal, oldVal){
+  $scope.$watch('zielton', function (newVal, oldVal) {
     $scope.markiereZielton(newVal);
   });
 
   /**
    * Watching for changes of the base tone
    */
-  $scope.$watch('grundton', function(newVal, oldVal){
+  $scope.$watch('grundton', function (newVal, oldVal) {
     $scope.markiereGrundton(newVal);
   });
 
-  /**
-   * 'Busiuness Logic' of this controller
-   * Mark every occurence of the target tone on the guitar
-   * @param zielton the target tone to be marked
-   */
-  $scope.markiereZielton = function (zielton) {
-  //TODO refactor me
-  for (var i=0; i<6;i++){
-    var saite = $scope.saiten[i].buende;
-    $scope.saiten[i].buende=_.map(saite, function (bund) {
+/**
+ * 'Busiuness Logic' of this controller
+ * Mark every occurence of the target tone on the guitar
+ * @param zielton the target tone to be marked
+ */
+$scope.markiereZielton = function (zielton) {
+    var markiereZieltoeneAufEinerSaite = function (bund) {
       bund.zieltonMarkiert = bund.note === zielton;
       return bund;
-    });
-  }
-
-  }
-
-  /**
-   * 'Busiuness Logic' of this controller
-   * Mark every occurence of the base tone on the guitar
-   * @param grundton the base tone to be marked
-   */
-  $scope.markiereGrundton = function (grundton) {
+    };
 
     //TODO refactor me
-    for (var i=0; i<6;i++){
+    for (var i = 0; i < 6; i++) {
       var saite = $scope.saiten[i].buende;
-      $scope.saiten[i].buende=_.map(saite, function (bund) {
-        bund.grundtonMarkiert = bund.note === grundton;
-        return bund;
-      });
+      $scope.saiten[i].buende = _.map(saite, markiereZieltoeneAufEinerSaite);
     }
 
-  }
+  };
+
+/**
+ * 'Business Logic' of this controller
+ * Mark every occurence of the base tone on the guitar
+ * @param grundton the base tone to be marked
+ */
+  $scope.markiereGrundton = function (grundton) {
+    var markiereGrundtoeneAufEinerSaite = function(bund) {
+      bund.grundtonMarkiert = bund.note === grundton;
+      return bund;
+    };
+    //TODO refactor me
+    for (var i = 0; i < 6; i++) {
+      var saite = $scope.saiten[i].buende;
+      $scope.saiten[i].buende = _.map(saite, markiereGrundtoeneAufEinerSaite);
+    }
+
+  };
 
 
 }]);
+
 
 
