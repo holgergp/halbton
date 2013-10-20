@@ -15,40 +15,40 @@ describe('controllers', function () {
    * TODO refactor
    * @type {{name: string, index: number}}
    */
-  var notec={"name": "C",
+  var notec = {"name": "C",
     index: 0
   };
-  var notecsharp={"name": "C#",
+  var notecsharp = {"name": "C#",
     index: 1
   };
-  var noted={"name": "D",
+  var noted = {"name": "D",
     index: 2
   };
-  var notedsharp={"name": "D#",
+  var notedsharp = {"name": "D#",
     index: 3
   };
-  var notee={"name": "E",
+  var notee = {"name": "E",
     index: 4
   };
-  var notef={"name": "F",
+  var notef = {"name": "F",
     index: 5
   };
-  var notefsharp={"name": "F#",
+  var notefsharp = {"name": "F#",
     index: 6
   };
-  var noteg={"name": "G",
+  var noteg = {"name": "G",
     index: 7
   };
-  var notegsharp={"name": "G#",
+  var notegsharp = {"name": "G#",
     index: 8
   };
-  var notea={"name": "A",
+  var notea = {"name": "A",
     index: 9
   };
-  var noteasharp={"name": "A#",
+  var noteasharp = {"name": "A#",
     index: 10
   };
-  var noteh={"name": "H",
+  var noteh = {"name": "H",
     index: 11
   };
 
@@ -58,7 +58,7 @@ describe('controllers', function () {
    * @type {Array}
    */
   var halbtoene = [
-    notec,notecsharp,noted,notedsharp,notee,notef,notefsharp,noteg,notegsharp,notea,noteasharp,noteh
+    notec, notecsharp, noted, notedsharp, notee, notef, notefsharp, noteg, notegsharp, notea, noteasharp, noteh
   ];
 
 
@@ -78,7 +78,7 @@ describe('controllers', function () {
    * @type {{berechneZielton: Function, keinZielton: {name: string}}}
    */
   var mockService = {
-    berechneZielton: function (){
+    berechneZielton: function () {
       return keineNote;
     },
     keinZielton: keineNote
@@ -94,7 +94,7 @@ describe('controllers', function () {
       halbtonAbstandCtrl = $controller('HalbtonAbstandController', {
         $scope: scope,
         zieltonService: mockService,
-        halbtoene:halbtoene
+        halbtoene: halbtoene
 
       });
     }));
@@ -113,7 +113,7 @@ describe('controllers', function () {
       spyOn(mockService, 'berechneZielton').andCallThrough();
 
       //make the call!
-      scope.berechneZielton(null,null)
+      scope.berechneZielton(null, null)
 
       //assert!
       expect(mockService.berechneZielton).toHaveBeenCalled();
@@ -122,7 +122,7 @@ describe('controllers', function () {
 
     it('should set the zielton', function () {
 
-      scope.berechneZielton(null,null)
+      scope.berechneZielton(null, null)
 
       //assert!
       expect(scope.zielton).toEqual(keineNote);
@@ -140,15 +140,15 @@ describe('controllers', function () {
 
       gitarrenCtrl = $controller('GitarrenController', {
         $scope: scope,
-        zieltonService:mockService,
-        halbtoene:halbtoene
+        zieltonService: mockService,
+        halbtoene: halbtoene
       });
 
 
       halbtonAbstandCtrl = $controller('HalbtonAbstandController', {
         $scope: scope,
-        zieltonService:mockService,
-        halbtoene:halbtoene
+        zieltonService: mockService,
+        halbtoene: halbtoene
       });
 
     }));
@@ -164,95 +164,95 @@ describe('controllers', function () {
 
     });
 
-    it ('should call markiereZielton onChange',function() {
+    it('should call markiereZielton onChange', function () {
       //set up the spy.
       spyOn(scope, 'markiereZielton').andCallThrough();
 
       //make the call!
-      scope.zielton=keineNote;
+      scope.zielton = keineNote;
       scope.$apply();
 
       //assert!
       expect(scope.markiereZielton).toHaveBeenCalled();
     });
 
-    it ('should mark Zielton E',function() {
+    it('should mark Zielton E', function () {
       scope.markiereZielton(notee);
-      var count=_.countBy(scope.saiten[5].buende, function(bund) {
-        return bund.zieltonMarkiert ===true;
+      var count = _.countBy(scope.saiten[5].buende, function (bund) {
+        return bund.zieltonMarkiert === true;
       });
 
       expect(count.true).toBe(1);
       expect(count.false).toBe(12);
     });
 
-    it ('should not mark Zielton Keine Note',function() {
+    it('should not mark Zielton Keine Note', function () {
 
       scope.markiereZielton({name: 'Keine Note'});
 
 
-      var count=_.countBy(scope.saiten[5].buende, function(bund) {
-        return bund.zieltonMarkiert ===true;
+      var count = _.countBy(scope.saiten[5].buende, function (bund) {
+        return bund.zieltonMarkiert === true;
       });
 
       expect(count.false).toBe(13);
 
     });
 
-    it ('should not fail on null',function() {
+    it('should not fail on null', function () {
 
 
       scope.markiereZielton(null);
 
 
-      var count=_.countBy(scope.saiten[5].buende, function(bund) {
-        return bund.zieltonMarkiert ===true;
+      var count = _.countBy(scope.saiten[5].buende, function (bund) {
+        return bund.zieltonMarkiert === true;
       });
 
       expect(count.false).toBe(13);
     });
 
 
-    it ('should call markiereGrundton onChange',function() {
+    it('should call markiereGrundton onChange', function () {
       //set up the spy.
       spyOn(scope, 'markiereGrundton').andCallThrough();
 
       //make the call!
-      scope.grundton=keineNote;
+      scope.grundton = keineNote;
       scope.$apply();
 
       //assert!
       expect(scope.markiereGrundton).toHaveBeenCalled();
     });
 
-    it ('should mark Grundton E',function() {
+    it('should mark Grundton E', function () {
       scope.markiereGrundton(notee);
-      var count=_.countBy(scope.saiten[5].buende, function(bund) {
-        return bund.grundtonMarkiert ===true;
+      var count = _.countBy(scope.saiten[5].buende, function (bund) {
+        return bund.grundtonMarkiert === true;
       });
 
       expect(count.true).toBe(1);
       expect(count.false).toBe(12);
     });
 
-    it ('should not mark Grundton Keine Note',function() {
+    it('should not mark Grundton Keine Note', function () {
       scope.markiereZielton({name: 'Keine Note'});
 
 
-      var count=_.countBy(scope.saiten[5].buende, function(bund) {
-        return bund.grundtonMarkiert ===true;
+      var count = _.countBy(scope.saiten[5].buende, function (bund) {
+        return bund.grundtonMarkiert === true;
       });
 
       expect(count.false).toBe(13);
 
     });
 
-    it ('should not fail on null',function() {
+    it('should not fail on null', function () {
       scope.markiereGrundton(null);
 
 
-      var count=_.countBy(scope.saiten[5].buende, function(bund) {
-        return bund.grundtonMarkiert ===true;
+      var count = _.countBy(scope.saiten[5].buende, function (bund) {
+        return bund.grundtonMarkiert === true;
       });
 
       expect(count.false).toBe(13);

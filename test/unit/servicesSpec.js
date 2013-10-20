@@ -2,17 +2,17 @@
 
 /* jasmine specs for services go here */
 
-describe('service', function() {
+describe('service', function () {
   beforeEach(module('halbtonApp.services'));
 
 
-  describe('version', function() {
-    it('should return current version', inject(function(version) {
+  describe('version', function () {
+    it('should return current version', inject(function (version) {
       expect(version).toEqual('0.1');
     }));
   });
 
-  describe('zieltonService', function() {
+  describe('zieltonService', function () {
 
     var myZieltonService;
 
@@ -20,10 +20,10 @@ describe('service', function() {
 
     }
     //excuted before each "it" is run.
-    beforeEach(function (){
+    beforeEach(function () {
 
-            //inject your service for testing.
-      inject(function(zieltonService) {
+      //inject your service for testing.
+      inject(function (zieltonService) {
         myZieltonService = zieltonService;
       });
     });
@@ -61,12 +61,11 @@ describe('service', function() {
     });
   });
 
-  describe('halbtoene', function() {
-    it('should return the halbtoene', inject(function(halbtoene) {
+  describe('halbtoene', function () {
+    it('should return the halbtoene', inject(function (halbtoene) {
       expect(halbtoene.length).toEqual(12);
     }));
   });
-
 
 
 });
