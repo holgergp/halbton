@@ -5,8 +5,10 @@ Halbton should provide a simple computing of a tonevalue given a basetone and an
 
 This app is based on the [angular-seed project](https://github.com/angular/angular-seed/)
 
-I switched the backend from the shipped webserver with express, to define routes more easily.
+I switched the backend from the shipped webserver to express, to define routes more easily.
 Start the app by `node app.js`
+
+You can lint and test the app via `grunt` (requires a running app for now)
 
 You can see it in action [here](http://halbton.herokuapp.com)
 
