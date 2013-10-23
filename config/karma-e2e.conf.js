@@ -8,7 +8,7 @@ module.exports = function(config){
         'test/e2e/**/*.js'
     ],
 
-    autoWatch : false,
+    autoWatch : true,
 
     browsers : ['Chrome'],
 

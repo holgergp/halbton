@@ -1,0 +1,34 @@
+basePath = '../',
+
+  files = [
+    ANGULAR_SCENARIO,
+    ANGULAR_SCENARIO_ADAPTER,
+    'test/e2e/**/*.js'
+  ],
+
+  autoWatch = false,
+
+  browsers = ['Chrome'],
+
+  frameworks = ['ng-scenario'],
+
+  singleRun = true,
+
+  proxies = {
+    '/': 'http://localhost:8000/'
+  },
+
+  urlRoot = "/__testacular/",
+
+  plugins = [
+    'karma-junit-reporter',
+    'karma-chrome-launcher',
+    'karma-firefox-launcher',
+    'karma-jasmine',
+    'karma-ng-scenario'
+  ],
+
+  junitReporter = {
+    outputFile: 'test_out/e2e.xml',
+    suite: 'e2e'
+  }
