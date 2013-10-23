@@ -12,12 +12,6 @@ module.exports = function (grunt) {
       templates: ['app/partials/**/*.html']
     },
 
-    develop: {
-      server: {
-        file: 'app.js'
-      }
-    },
-
 
     //JS Test files
     test: {
@@ -100,7 +94,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-concurrent');
-  grunt.loadNpmTasks('grunt-develop');
 
   grunt.registerTask('web', ['connect:web']);
 
