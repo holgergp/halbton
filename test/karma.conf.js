@@ -13,7 +13,7 @@ exclude = ['karma.conf.js'];
 
 // test results reporter to use
 // possible values: dots || progress || growl
-reporters = ['progress'];
+reporters = ['dots'];
 
 // web server port
 port = process.env['KARMA_PORT'] || 8100;
@@ -31,7 +31,7 @@ colors = process.env['KARMA_COLORS'] || true;
 logLevel = LOG_INFO;
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = true;
+autoWatch = false;
 
 // Start these browsers, currently available:
 // - Chrome
