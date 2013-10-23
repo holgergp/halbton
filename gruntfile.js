@@ -69,7 +69,7 @@ module.exports = function (grunt) {
 
     concurrent: {
       dev: {
-        tasks: [ 'watch-integration-tests', 'watch-tests', 'jshint'],
+        tasks: [ 'integration-test', 'test', 'jshint'],
         options: {
           logConcurrentOutput: true
         }
@@ -85,8 +85,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-develop');
 
   grunt.registerTask('web', ['connect:web']);
-  grunt.registerTask('watch-tests', ['karma:unit']);
-  grunt.registerTask('watch-integration-tests', ['karma:continuous']);
+  grunt.registerTask('test', ['karma:unit']);
+  grunt.registerTask('integration-test', ['karma:continuous']);
 
   grunt.registerTask('default', ['concurrent:dev']);
 
