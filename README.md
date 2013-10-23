@@ -9,7 +9,7 @@ I switched the backend from the shipped webserver to express, to define routes m
 Start the app by `node app.js`
 
 `grunt` lints and tests the app (requires a running app for now)
-Added command line option `runInTravis` to set customize the build for the travis environment.
+Added command line arg `--runInTravis`to the grunt script to customize the build for the travis environment.
 
 You can see it in action [here](http://halbton.herokuapp.com)
 
