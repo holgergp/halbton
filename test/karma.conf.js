@@ -40,7 +40,7 @@ autoWatch = true;
 // - Opera
 // - Safari
 // - PhantomJS
-browsers = [process.env['KARMA_BROWSER'] || 'Chrome'];
+browsers = [process.env['KARMA_BROWSER'] || 'Firefox'];
 
 // Continuous Integration mode
 // if true, it capture browsers, run tests and exit

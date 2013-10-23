@@ -8,7 +8,7 @@ basePath = '../',
 
   autoWatch = false,
 
-  browsers = ['Chrome'],
+  browsers = [process.env['KARMA_BROWSER'] || 'Firefox'];
 
   frameworks = ['ng-scenario'],
 
