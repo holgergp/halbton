@@ -38,17 +38,34 @@ module.exports = function (grunt) {
     },
 
     karma: {
-      unit: {
+
+      unit_travis: {
         configFile: '<%= test.karmaConfig %>',
-        singleRun: true
+        singleRun: true,
+        reporter: 'dots'
       },
-      continuous: {
+      unit_local: {
+        configFile: '<%= test.karmaConfig %>',
+        singleRun: true,
+        reporter: 'progress',
+        browsers: ['Chrome']
+
+      },
+      e2e_travis: {
+
         configFile: '<%= test.karmaE2EConfig %>',
-        singleRun: true
+        singleRun: true,
+        reporters: ['dots']
+      },
+      e2e_local: {
+        configFile: '<%= test.karmaE2EConfig %>',
+        singleRun: true,
+        reporters: ['progress'],
+        browsers: ['Chrome']
+
       }
 
     },
-
 
     connect: {
       web: {
@@ -77,6 +94,7 @@ module.exports = function (grunt) {
     }
   });
 
+
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-connect');
@@ -85,8 +103,20 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-develop');
 
   grunt.registerTask('web', ['connect:web']);
-  grunt.registerTask('test', ['karma:unit']);
-  grunt.registerTask('integration-test', ['karma:continuous']);
+
+  var runInTravis = grunt.option('runInTravis') || false;
+  var buildEnvironment;
+  if (runInTravis) {
+    buildEnvironment = 'travis';
+  }
+  else {
+    buildEnvironment = 'local';
+  }
+
+  console.log('Running build in mode: ' + buildEnvironment);
+
+  grunt.registerTask('test', ['karma:unit_' + buildEnvironment]);
+  grunt.registerTask('integration-test', ['karma:e2e_' + buildEnvironment]);
 
   grunt.registerTask('default', ['concurrent:dev']);
 
