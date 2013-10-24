@@ -37,7 +37,7 @@ module.exports = function (grunt) {
       testServer: {
         options: {
           server: path.resolve(__dirname, 'appTest.js'),
-          port: 8000
+          port: 8006
         }
       }
     },

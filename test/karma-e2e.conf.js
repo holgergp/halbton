@@ -1,4 +1,4 @@
-basePath = '../',
+  basePath = '../',
 
   files = [
     ANGULAR_SCENARIO,
@@ -17,7 +17,7 @@ basePath = '../',
   singleRun = true,
 
   proxies = {
-    '/': 'http://localhost:8000/'
+    '/': 'http://localhost:8006/'
   },
 
   urlRoot = "/__testacular/",
