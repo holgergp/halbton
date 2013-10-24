@@ -1,4 +1,8 @@
 'use strict';
+/**
+ * App for 'production'-purposes, listens!
+ * @type {*}
+ */
 
 var express = require('express');
 var app = express();
