@@ -2,6 +2,8 @@
 
 module.exports = function (grunt) {
 
+  var path = require('path');
+
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
@@ -28,6 +30,15 @@ module.exports = function (grunt) {
       },
       files: {
         src: ['gruntfile.js', '<%= src.js %>', '<%= test.unit %>', '<%= test.integration %>']
+      }
+    },
+
+    express: {
+      testServer: {
+        options: {
+          server: path.resolve(__dirname, 'appTest.js'),
+          port: 8000
+        }
       }
     },
 
@@ -61,7 +72,7 @@ module.exports = function (grunt) {
 
     },
 
-    connect: {
+    /**connect: {
       web: {
         options: {
           port: 8000,
@@ -69,7 +80,7 @@ module.exports = function (grunt) {
           keepalive: true
         }
       }
-    },
+    },**/
 
     watch: {
       jshint: {
@@ -94,6 +105,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-express');
 
   grunt.registerTask('web', ['connect:web']);
 
@@ -108,8 +120,10 @@ module.exports = function (grunt) {
 
   console.log('Running build in mode: ' + buildEnvironment);
 
+  grunt.registerTask('startServer', ['express']);
   grunt.registerTask('test', ['karma:unit_' + buildEnvironment]);
-  grunt.registerTask('integration-test', ['karma:e2e_' + buildEnvironment]);
+  grunt.registerTask('integration-test', [ 'startServer', 'karma:e2e_' + buildEnvironment]);
+
 
   grunt.registerTask('default', ['concurrent:dev']);
 
