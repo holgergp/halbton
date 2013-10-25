@@ -28,7 +28,7 @@ describe('service', function () {
       index: 11
     };
 
-    var notecsharp = {"name": "C#/C\u266D",
+    var notecsharp = {"name": "C#/D\u266D",
       index: 1
     };
     //excuted before each "it" is run.
