@@ -16,13 +16,13 @@ serviceModule.value('version', '0.1');
 var notec = {"name": "C",
   index: 0
 };
-var notecsharp = {"name": "C#/C\u266D",
+var notecsharp = {"name": "C#/D\u266D",
   index: 1
 };
 var noted = {"name": "D",
   index: 2
 };
-var notedsharp = {"name": "D#/D\u266D",
+var notedsharp = {"name": "D#/E\u266D",
   index: 3
 };
 var notee = {"name": "E",
@@ -31,19 +31,19 @@ var notee = {"name": "E",
 var notef = {"name": "F",
   index: 5
 };
-var notefsharp = {"name": "F#/F\u266D",
+var notefsharp = {"name": "F#/G\u266D",
   index: 6
 };
 var noteg = {"name": "G",
   index: 7
 };
-var notegsharp = {"name": "G#/G\u266D",
+var notegsharp = {"name": "G#/A\u266D",
   index: 8
 };
 var notea = {"name": "A",
   index: 9
 };
-var noteasharp = {"name": "A#/A\u266D",
+var noteasharp = {"name": "A#/H\u266D",
   index: 10
 };
 var noteh = {"name": "H",
