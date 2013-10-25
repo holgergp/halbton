@@ -29,10 +29,10 @@ describe('HalbtonApp', function () {
       expect(element('[ng-view] div.halbtonAnswer').text()).toMatch(/Keine/);
     });
 
-    it('should render D# as a result when user navigates to /view1 and inputs basetone C and threshold 3', function () {
+    it('should render E as a result when user navigates to /view1 and inputs basetone C and threshold 4', function () {
       select('grundton').option('C');
-      input('abstand').enter('3');
-      expect(element('[ng-view] div.halbtonAnswer').text()).toMatch(/D#/);
+      input('abstand').enter('4');
+      expect(element('[ng-view] div.halbtonAnswer').text()).toMatch(/E/);
     });
 
     it('should render "Keine Ahnung" as a result when user navigates to /view1 and enters invalid input', function () {
@@ -55,15 +55,16 @@ describe('HalbtonApp', function () {
     });
 
     it('should mark note e on the guitar when user selects an e as grundton', function () {
-      select('grundton').option('E');
+      select('grundton').option("E");
       //Acht es gibt es, das reicht erstmal
       expect(repeater('div.grundtonMarkiert').count()).toEqual(8);
     });
 
 
     it('should mark note e as grundton and f as zielton on the guitar when user selects an e as grundton and abstand 1', function () {
-      select('grundton').option('E');
+      select('grundton').option("E");
       input('abstand').enter('1');
+
       //Acht es gibt es, das reicht erstmal
       expect(repeater('div.grundtonMarkiert').count()).toEqual(8);
       //Sechs fs gibt es, das reicht erstmal
@@ -72,7 +73,7 @@ describe('HalbtonApp', function () {
     });
 
     it('should mark note e as grundton and zielton on the guitar when user selects an e as grundton and abstand 0', function () {
-      select('grundton').option('E');
+      select('grundton').option("E");
       input('abstand').enter('0');
       //Acht es gibt es, das reicht erstmal
       expect(repeater('div.grundtonMarkiert').count()).toEqual(8);

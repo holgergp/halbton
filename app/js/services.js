@@ -14,39 +14,51 @@ serviceModule.value('version', '0.1');
  * @type {{name: string, index: number}}
  */
 var notec = {"name": "C",
+  targetName: 'C',
   index: 0
 };
-var notecsharp = {"name": "C#/D\u266D",
+var notecsharp = {"name": 'C#',
+  targetName: 'C#/D\u266D',
   index: 1
 };
-var noted = {"name": "D",
+var noted = {"name": 'D',
+  targetName: 'D',
   index: 2
 };
-var notedsharp = {"name": "D#/E\u266D",
+var notedsharp = {"name": 'D#',
+  targetName: 'D#/E\u266D',
   index: 3
 };
-var notee = {"name": "E",
+var notee = {"name": 'E',
+  targetName: 'E',
   index: 4
 };
-var notef = {"name": "F",
+var notef = {"name": 'F',
+  targetName: 'F',
   index: 5
 };
-var notefsharp = {"name": "F#/G\u266D",
+var notefsharp = {"name": 'F#',
+  targetName: 'F#/G\u266D',
   index: 6
 };
-var noteg = {"name": "G",
+var noteg = {"name": 'G',
+  targetName: 'G',
   index: 7
 };
-var notegsharp = {"name": "G#/A\u266D",
+var notegsharp = {"name": 'G#',
+  targetName: 'G#/A\u266D',
   index: 8
 };
-var notea = {"name": "A",
+var notea = {"name": 'A',
+  targetName: 'A',
   index: 9
 };
-var noteasharp = {"name": "A#/H\u266D",
+var noteasharp = {"name": 'A#D',
+  targetName: 'A#/H\u266D',
   index: 10
 };
-var noteh = {"name": "H",
+var noteh = {"name": 'H',
+  targetName: 'H',
   index: 11
 };
 
@@ -54,7 +66,7 @@ var noteh = {"name": "H",
  * 'Result' if no target tone could be computed
  * @type {{name: string}}
  */
-var keinZielton = {"name": "Keine Ahnung!"};
+var keinZielton = {"targetName": "Keine Ahnung!"};
 
 /**
  * All halbtoene

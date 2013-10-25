@@ -16,19 +16,22 @@ describe('service', function () {
 
     var myZieltonService;
 
-    var keineNote = {"name": "Keine Ahnung!"
+    var keineNote = {"targetName": "Keine Ahnung!"
 
     };
 
     var notec = {"name": "C",
+      targetName: 'C',
       index: 0
     };
 
     var noteh = {"name": "H",
+      targetName: 'H',
       index: 11
     };
 
-    var notecsharp = {"name": "C#/D\u266D",
+    var notecsharp = {"name": "C#",
+      targetName: "C#/D\u266D",
       index: 1
     };
     //excuted before each "it" is run.

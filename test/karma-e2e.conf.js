@@ -1,4 +1,4 @@
-  basePath = '../',
+basePath = '../',
 
   files = [
     ANGULAR_SCENARIO,
@@ -14,8 +14,9 @@
 
   frameworks = ['ng-scenario'],
 
-  singleRun = true,
+  singleRun = false,
 
+  runnerPort = process.env['KARMA_RUNNER_PORT'] || 9102,
   proxies = {
     '/': 'http://localhost:8006/'
   },
