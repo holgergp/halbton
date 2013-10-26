@@ -17,6 +17,10 @@ hr {
     margin: 0.8em 0 0;
 }
 
+select, input {
+    color: #484848;
+}
+
 .bundInSaite-1 {
     height: 1px;
 }
@@ -41,17 +45,17 @@ hr {
     height: 6px;
 }
 
-.bundInSaite-1Leer, .bundInSaite-2Leer, .bundInSaite-3Leer,.bundInSaite-4Leer, .bundInSaite-5Leer, .bundInSaite-6Leer{
+.bundInSaite-1Leer, .bundInSaite-2Leer, .bundInSaite-3Leer, .bundInSaite-4Leer, .bundInSaite-5Leer, .bundInSaite-6Leer {
     height: 0;
 }
 
-
-
 .halbtonQuestion {
-    font-size: 2.8em;
+    font-size: 4em;
     padding-top: 0.66em;
     font-weight: bold;
     line-height: 1em;
+    color: #484848;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 
 .halbtonAnswer {
@@ -59,6 +63,9 @@ hr {
     font-weight: bold;
     padding-top: 0.1em;
     line-height: 1em;
+    color: #484848;
+    font-family: 'Vollkorn', Georgia, Times, serif;
+
 }
 
 .saite-1 {
@@ -104,8 +111,9 @@ hr {
 }
 
 .gitarre {
-    height:100%;
+    height: 100%;
 }
+
 .bundClass {
     width: 3em;
     height: 2.6em;
@@ -159,8 +167,6 @@ hr {
     position: relative;
     top: -0.5em;
 }
-
-
 
 .menu {
     list-style: none;
