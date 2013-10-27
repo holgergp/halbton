@@ -56,13 +56,14 @@ select, input {
 
 .halbtonQuestion {
     font-size: 4em;
-    padding-top: 0.66em;
+    padding-top: 0.3em;
     font-weight: bold;
     line-height: 1em;
     color: #484848;
     /*font-family: 'Vollkorn', Georgia, Times, serif;*/
     font-family: 'Cardo', Georgia, Times, serif;
     text-align: center;
+
 }
 
 .halbtonAnswer {
@@ -75,8 +76,13 @@ select, input {
     background: rgba(102, 201, 139, 0.77) repeat 0 0;
     font-family: 'Allan', Helvetica, Arial, sans-serif;
     /* font-family: 'Ubuntu', Helvetica, Arial, sans-serif;*/
+    border-color: #484848;
+    border-style: solid;
+    border-width: 8px;
 
-}
+
+
+ }
 
 .saite-1 {
     /* border-top: 1px solid black;*/
