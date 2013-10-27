@@ -6,7 +6,7 @@ body {
 }
 
 body.app {
-    background-color: rgba(73, 69, 65, 0.41);
+    background-color: rgba(55, 221, 105, 0.78);
     height: 20em;
 }
 
@@ -55,16 +55,21 @@ select, input {
     font-weight: bold;
     line-height: 1em;
     color: #484848;
-    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    /*font-family: 'Vollkorn', Georgia, Times, serif;*/
+    font-family: 'Cardo', Georgia, Times, serif;
+    text-align: center;
 }
 
 .halbtonAnswer {
-    font-size: 6.8em;
+    font-size: 8em;
     font-weight: bold;
     padding-top: 0.1em;
     line-height: 1em;
     color: #484848;
-    font-family: 'Vollkorn', Georgia, Times, serif;
+    text-align: center;
+
+    font-family: 'Allan', Helvetica, Arial, sans-serif;
+   /* font-family: 'Ubuntu', Helvetica, Arial, sans-serif;*/
 
 }
 
@@ -112,6 +117,7 @@ select, input {
 
 .gitarre {
     height: 100%;
+    text-align: center;
 }
 
 .bundClass {
