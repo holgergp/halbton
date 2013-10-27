@@ -5,8 +5,12 @@ body {
 
 }
 
+a, a:hover {
+    color: #484848;
+}
+
 body.app {
-    background-color: rgba(55, 221, 105, 0.78);
+    background: rgba(118, 221, 157, 0.77) repeat 0 0;
     height: 20em;
 }
 
@@ -67,9 +71,9 @@ select, input {
     line-height: 1em;
     color: #484848;
     text-align: center;
-
+    background: rgba(102, 201, 139, 0.77) repeat 0 0;
     font-family: 'Allan', Helvetica, Arial, sans-serif;
-   /* font-family: 'Ubuntu', Helvetica, Arial, sans-serif;*/
+    /* font-family: 'Ubuntu', Helvetica, Arial, sans-serif;*/
 
 }
 
@@ -142,8 +146,9 @@ select, input {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     border-radius: 0.5em;
-    color: #2a9b2a;
-    background-color: #2a9b2a;
+
+    background: rgba(102, 201, 139, 0.77) repeat 0 0;
+    color: rgba(102, 201, 139, 0.77);
     display: inline-block;
     position: relative;
     top: -0.5em;
