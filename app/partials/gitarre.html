@@ -1,4 +1,5 @@
-<div class="gitarre" ng-controller="GitarrenController" ng-init="markiereZielton()">
+
+<div class="gitarre col-md-12" ng-controller="GitarrenController" ng-init="markiereZielton()">
     <div class="gitarrenHals">
         <div ng-repeat="saite in saiten" class="saite-{{$index+1}}">
             <div ng-repeat="bund in saite.buende" style="display: inline-block">
@@ -10,5 +11,4 @@
             </div>
         </div>
     </div>
-
 </div>
