@@ -32,29 +32,30 @@ select, input {
 :-moz-placeholder {color: @text-color }
 :-ms-input-placeholder {color: @text-color }
 
+@saitenHoehe: 1px;
 
 .bundInSaite-1 {
-  height: 1px;
+  height: @saitenHoehe;
 }
 
 .bundInSaite-2 {
-  height: 2px;
+  height: @saitenHoehe + 1;
 }
 
 .bundInSaite-3 {
-  height: 3px;
+  height: @saitenHoehe + 2;
 }
 
 .bundInSaite-4 {
-  height: 4px;
+  height: @saitenHoehe + 3;
 }
 
 .bundInSaite-5 {
-  height: 5px;
+  height: @saitenHoehe + 4;
 }
 
 .bundInSaite-6 {
-  height: 6px;
+  height: @saitenHoehe + 5;
 }
 
 .bundInSaite-1Leer, .bundInSaite-2Leer, .bundInSaite-3Leer, .bundInSaite-4Leer, .bundInSaite-5Leer, .bundInSaite-6Leer {
@@ -66,8 +67,7 @@ select, input {
   padding-top: 0.3em;
   font-weight: bold;
   line-height: 1em;
-  color: #484848;
-  /*font-family: 'Vollkorn', Georgia, Times, serif;*/
+  color: @text-color;
   font-family: 'Cardo', Georgia, Times, serif;
   text-align: center;
 
@@ -82,49 +82,48 @@ select, input {
   text-align: center;
   background: rgba(102, 201, 139, 0.77) repeat 0 0;
   font-family: 'Allan', Helvetica, Arial, sans-serif;
-  /* font-family: 'Ubuntu', Helvetica, Arial, sans-serif;*/
-  border-color: #484848;
+  border-color: @text-color;
   border-style: solid;
   border-width: 8px;
 
 }
 
-@saitenHoehe: 3em;
+@bundHoehe: 3em;
 
 .saite-1 {
   /* border-top: 1px solid black;*/
   width: 100%;
-  height: @saitenHoehe;
+  height: @bundHoehe;
 }
 
 .saite-2 {
   /*border-top: 2px solid black;*/
   width: 100%;
-  height: @saitenHoehe;
+  height: @bundHoehe;
 }
 
 .saite-3 {
   /*border-top: 3px solid black;*/
   width: 100%;
-  height: @saitenHoehe;
+  height: @bundHoehe;
 }
 
 .saite-4 {
   /*border-top: 4px solid black;*/
   width: 100%;
-  height: @saitenHoehe;
+  height: @bundHoehe;
 }
 
 .saite-5 {
   /* border-top: 5px solid black;*/
   width: 100%;
-  height: @saitenHoehe;
+  height: @bundHoehe;
 }
 
 .saite-6 {
   /*   border-top: 6px solid black;*/
   width: 100%;
-  height: @saitenHoehe;
+  height: @bundHoehe;
 }
 
 .gitarrenHals {
