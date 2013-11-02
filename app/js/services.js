@@ -53,7 +53,7 @@ var notea = {"name": 'A',
   targetName: 'A',
   index: 9
 };
-var noteasharp = {"name": 'A#D',
+var noteasharp = {"name": 'A#',
   targetName: 'A#/H\u266D',
   index: 10
 };

@@ -22,7 +22,7 @@ describe('HalbtonApp', function () {
     });
 
     it('should render view1 when user navigates to /view1', function () {
-      expect(element('[ng-view] div:first').text()).toMatch(/Wenn ich von/);
+      expect(element('[ng-view] div:first').text()).toMatch(/Wenn ich vom/);
     });
 
     it('should render "Keine Ahnung" as a result when user navigates to /view1', function () {
