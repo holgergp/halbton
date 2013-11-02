@@ -2,9 +2,10 @@
    <!-- <div class="col-md-2"><i class="fa fa-question fa-5x"></i></div>-->
     <div class="col-md-12 halbtonQuestion">Wenn ich von
 
+        <!--Seems strange to me: http://stackoverflow.com/questions/2547354/how-to-increase-the-height-of-the-select-box-->
         <select ng-model="grundton" ng-options="ton.name  for ton in halbtoene" ng-required="true" required="true"
                 ng-change="berechneZielton(grundton,abstand)"
-                class="">
+                class="" style="background: none;">
             <option value="">Grundton</option>
         </select>
 
