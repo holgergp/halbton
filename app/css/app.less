@@ -4,7 +4,7 @@ body {
   font-size: 100%;
 }
 
-@text-color:#484848;
+@text-color: #484848;
 
 a, a:hover {
   color: @text-color;
@@ -27,10 +27,18 @@ select, input {
   color: @text-color;
 }
 
+::-webkit-input-placeholder {
+  line-height: normal;
+  color: @text-color
+}
 
-::-webkit-input-placeholder { line-height: normal;  color: @text-color }
-:-moz-placeholder {color: @text-color }
-:-ms-input-placeholder {color: @text-color }
+:-moz-placeholder {
+  color: @text-color
+}
+
+:-ms-input-placeholder {
+  color: @text-color
+}
 
 @saitenHoehe: 1px;
 
@@ -90,40 +98,34 @@ select, input {
 
 @bundHoehe: 3em;
 
-.saite-1 {
+.saite {
   /* border-top: 1px solid black;*/
   width: 100%;
   height: @bundHoehe;
 }
 
+.saite-1 {
+  .saite;
+}
+
 .saite-2 {
-  /*border-top: 2px solid black;*/
-  width: 100%;
-  height: @bundHoehe;
+  .saite;
 }
 
 .saite-3 {
-  /*border-top: 3px solid black;*/
-  width: 100%;
-  height: @bundHoehe;
+  .saite;
 }
 
 .saite-4 {
-  /*border-top: 4px solid black;*/
-  width: 100%;
-  height: @bundHoehe;
+  .saite;
 }
 
 .saite-5 {
-  /* border-top: 5px solid black;*/
-  width: 100%;
-  height: @bundHoehe;
+  .saite;
 }
 
 .saite-6 {
-  /*   border-top: 6px solid black;*/
-  width: 100%;
-  height: @bundHoehe;
+  .saite;
 }
 
 .gitarrenHals {
@@ -137,61 +139,63 @@ select, input {
   text-align: center;
 }
 
+
 @bundWidth: 4em;
 @bundHeight: 4em;
-.bundClass {
+.bundClassTemplate(@color: #ffffff){
   width: @bundWidth;
   height: @bundHeight;
+  background-color: @color;
+  overflow-x: hidden;
+}
+
+
+.bundClass {
+  .bundClassTemplate(#865e36);
   /*border-left: 0.2em solid rgba(0, 0, 0, 0.18);*/
   border-right: 0.2em solid rgba(0, 0, 0, 0.7);
-  background-color: #865e36;
-  overflow-x: hidden;
 }
 
 .bundClassLeer {
-  width: @bundWidth;
-  height: @bundHeight;
-  background-color: #ffffff;
-  overflow-x: hidden;
+  .bundClassTemplate(#ffffff);
+}
+
+@tonMarkierungGroesse: 1.4em;
+@tonMarkierungBorderRadius: 0.7em;
+
+.tonMarkiert (@color:  #000000) {
+  width: @tonMarkierungGroesse;
+  height: @tonMarkierungGroesse;
+  -webkit-border-radius: @tonMarkierungBorderRadius;
+  -moz-border-radius: @tonMarkierungBorderRadius;
+  border-radius: @tonMarkierungBorderRadius;
+  background: @color repeat 0 0;
+  color: @color;
+  display: inline-block;
+  position: relative;
+  top: -0.5em;
+}
+
+.tonNichtMarkiert {
+  display: inline-block;
+  position: relative;
+  top: -0.5em;
 }
 
 .zieltonMarkiert {
-  width: 0.8em;
-  height: 0.8em;
-  -webkit-border-radius: 0.4em;
-  -moz-border-radius: 0.4em;
-  border-radius: 0.5em;
-
-  background: rgba(102, 201, 139, 0.77) repeat 0 0;
-  color: rgba(102, 201, 139, 0.77);
-  display: inline-block;
-  position: relative;
-  top: -0.5em;
+  .tonMarkiert(rgba(102, 201, 139, 0.77));
 }
 
 .zieltonNichtMarkiert {
-  display: inline-block;
-  position: relative;
-  top: -0.5em;
+  .tonNichtMarkiert;
 }
 
 .grundtonMarkiert {
-  width: 0.8em;
-  height: 0.8em;
-  -webkit-border-radius: 0.4em;
-  -moz-border-radius: 0.4em;
-  border-radius: 0.5em;
-  color: #000000;
-  background-color: #000000;
-  display: inline-block;
-  position: relative;
-  top: -0.5em;
+  .tonMarkiert(#000000);
 }
 
 .grundtonNichtMarkiert {
-  display: inline-block;
-  position: relative;
-  top: -0.5em;
+  .tonNichtMarkiert;
 }
 
 .links {
