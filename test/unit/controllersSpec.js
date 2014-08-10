@@ -4,7 +4,6 @@
 
 describe('controllers', function () {
 
-  beforeEach(module('halbtonApp.controllers'));
   var scope = null;
   var gitarrenCtrl = null;
   var halbtonAbstandCtrl = null;
@@ -87,6 +86,8 @@ describe('controllers', function () {
 
 
   describe('HalbtonAbstandController', function () {
+    beforeEach(module('halbtonApp.qa'));
+
     beforeEach(inject(function ($rootScope, $controller) {
       //create a scope object for us to use.
       scope = $rootScope.$new();
@@ -133,7 +134,9 @@ describe('controllers', function () {
   });
 
   describe('GitarrenController', function () {
-
+    beforeEach(module('halbtonApp.fretboard'));
+    //TODO hgp Controllers should be independent, or?
+    beforeEach(module('halbtonApp.qa'));
     beforeEach(inject(function ($rootScope, $controller) {
       //create a scope object for us to use.
       scope = $rootScope.$new();

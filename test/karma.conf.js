@@ -4,7 +4,9 @@ files = [
   '../app/lib/angular/angular.js',
   'lib/angular/angular-mocks.js',
   '../app/lib/underscore-min.js',
-  '../app/js/*.js',
+  '../app/**/*Module.js',
+  '../app/**/*Service.js',
+  '../app/**/*.js',
 
   'unit/*Spec.js'
 ],

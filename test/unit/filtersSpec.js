@@ -3,7 +3,7 @@
 /* jasmine specs for filters go here */
 
 describe('filter', function () {
-  beforeEach(module('halbtonApp.filters'));
+  beforeEach(module('halbtonApp.version'));
 
 
   describe('interpolate', function () {

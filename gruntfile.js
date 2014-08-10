@@ -10,8 +10,9 @@ module.exports = function (grunt) {
 
     src: {
       // This will cover all JS files in 'js' and sub-folders
-      js: ['app/js/**/*.js'],
-      templates: ['app/partials/**/*.html']
+      js: ['app/**/*.js'],
+      lib: ['app/lib/**/*.js'],
+      templates: ['app/**/*.html']
     },
 
 
@@ -29,7 +30,7 @@ module.exports = function (grunt) {
         jshintrc: '.jshintrc'
       },
       files: {
-        src: ['gruntfile.js', '<%= src.js %>', '<%= test.unit %>', '<%= test.integration %>']
+        src: ['gruntfile.js', '<%= src.js %>', '<%= test.unit %>', '<%= test.integration %>', '!<%= src.lib %>']
       }
     },
 
@@ -120,7 +121,7 @@ module.exports = function (grunt) {
 
   console.log('Running build in mode: ' + buildEnvironment);
 
-  grunt.registerTask('startServer', ['express']);
+  grunt.registerTask('startServer', ['express', 'express-keepalive']);
   grunt.registerTask('test', ['karma:unit_' + buildEnvironment]);
   grunt.registerTask('integration-test', [ 'startServer', 'karma:e2e_' + buildEnvironment]);
 

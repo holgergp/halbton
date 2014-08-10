@@ -1,14 +1,6 @@
 'use strict';
 
 /* Services */
-
-
-// Demonstrate how to register services
-// In this case it is a simple value service.
-var serviceModule = angular.module('halbtonApp.services', []);
-
-serviceModule.value('version', '0.1');
-
 /**
  * Define the notes of the octave
  * @type {{name: string, index: number}}
@@ -101,43 +93,48 @@ var mod = function (n, m) {
   return ((m % n) + n) % n;
 };
 
+
+// Demonstrate how to register services
+// In this case it is a simple value service.
+angular.module('halbtonApp.services').value('version', '0.1')
+
+
 /**
  * Defining the halbtoene as constant
  */
-serviceModule.constant('halbtoene', halbtoene);
+  .constant('halbtoene', halbtoene)
 
 /**
  * Registering the zieltonService as service to angular.js
  * In that way we can share logic between the two controllers
  */
-serviceModule.factory('zieltonService', function () {
+  .factory('zieltonService', function () {
 
-  return {
-    /**
-     * Given a basetone and a threshold compute a target tone
-     * @param grundton basetone from which we want to compute
-     * @param abstand threshold to 'add' to the basetone
-     * @returns {{name: string}}
-     */
-    berechneZielton : function (grundton, abstand) {
-      if (isNullOrEmpty(grundton) || isNullOrEmpty(abstand)) {
-        return keinZielton;
-      }
-      var zieltonIndex = mod(halbtoene.length, grundton.index + abstand);
+    return {
+      /**
+       * Given a basetone and a threshold compute a target tone
+       * @param grundton basetone from which we want to compute
+       * @param abstand threshold to 'add' to the basetone
+       * @returns {{name: string}}
+       */
+      berechneZielton: function (grundton, abstand) {
+        if (isNullOrEmpty(grundton) || isNullOrEmpty(abstand)) {
+          return keinZielton;
+        }
+        var zieltonIndex = mod(halbtoene.length, grundton.index + abstand);
 
-      var zielton = halbtoene[zieltonIndex];
-      return isNullOrEmpty(zielton) ? keinZielton:zielton;
-    },
+        var zielton = halbtoene[zieltonIndex];
+        return isNullOrEmpty(zielton) ? keinZielton : zielton;
+      },
 
-    /**
-     * Defining property of the service
-     */
-    keinZielton : keinZielton
-
-
-  };
+      /**
+       * Defining property of the service
+       */
+      keinZielton: keinZielton
 
 
+    };
 
-});
+
+  });
 
