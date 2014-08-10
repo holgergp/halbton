@@ -122,8 +122,9 @@ module.exports = function (grunt) {
   console.log('Running build in mode: ' + buildEnvironment);
 
   grunt.registerTask('startServer', ['express', 'express-keepalive']);
+  grunt.registerTask('startTestServer', ['express']);
   grunt.registerTask('test', ['karma:unit_' + buildEnvironment]);
-  grunt.registerTask('integration-test', [ 'startServer', 'karma:e2e_' + buildEnvironment]);
+  grunt.registerTask('integration-test', [ 'startTestServer', 'karma:e2e_' + buildEnvironment]);
 
 
   grunt.registerTask('default', ['concurrent:dev']);
