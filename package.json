@@ -32,6 +32,5 @@
     "grunt-contrib-watch": "~0.4.4",
     "grunt-concurrent": "~0.4.0",
     "grunt-express": "~1.0.0"
-
   }
 }
